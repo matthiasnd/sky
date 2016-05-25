@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sky!</title>
+        
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            html,body,canvas {
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+        </style>
+        
+        <link rel="shortcut icon" href="/favicon.ico" />
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        
+        <script src="/js/clouds.js"></script>
+        <script src="/js/firmament.js"></script>
+        <script src="/js/sky.js"></script>
+        
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/refreshator.js"></script>
+        
+        <script>
+            Sky.Init();
+            
+            Refreshator.Update(function(){
+                Sky.Start();
+            });
+            
+            setInterval(Refreshator.Update, 1800000);
+        </script>
+    </body>
+</html>
